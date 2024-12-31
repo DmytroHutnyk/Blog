@@ -21,8 +21,7 @@ public class Blog {
     public Blog() {
     }
 
-    public Blog(Long id, String name, List<Article> articleList, User user) {
-        this.id = id;
+    public Blog(String name, List<Article> articleList, User user) {
         this.name = name;
         this.articleList = articleList;
         this.user = user;

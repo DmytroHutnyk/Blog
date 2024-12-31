@@ -30,8 +30,7 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String email, List<Article> articleList, Blog blog, List<Role> roleList) {
-        this.id = id;
+    public User(String email, List<Article> articleList, Blog blog, List<Role> roleList) {
         this.email = email;
         this.articleList = articleList;
         this.blog = blog;

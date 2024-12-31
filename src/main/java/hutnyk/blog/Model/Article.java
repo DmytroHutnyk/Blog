@@ -20,8 +20,7 @@ public class Article {
     public Article() {
     }
 
-    public Article(Long id, String title, User user, Blog blog) {
-        this.id = id;
+    public Article(String title, User user, Blog blog) {
         this.title = title;
         this.user = user;
         this.blog = blog;
