@@ -51,4 +51,14 @@ public class UserDTO {
     public void setRoleIdList(List<Long> roleIdList) {
         this.roleIdList = roleIdList;
     }
+
+    @Override
+    public String toString() {
+        return "UserDTO{" +
+                "email='" + email + '\'' +
+                ", articleIdList=" + articleIdList +
+                ", blogId=" + blogId +
+                ", roleIdList=" + roleIdList +
+                '}';
+    }
 }

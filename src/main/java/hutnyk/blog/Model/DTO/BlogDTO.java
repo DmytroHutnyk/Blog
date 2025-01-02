@@ -44,4 +44,13 @@ public class BlogDTO {
     public void setUserId(Long userId) {
         this.userId = userId;
     }
+
+    @Override
+    public String toString() {
+        return "BlogDTO{" +
+                "name='" + name + '\'' +
+                ", articleIdList=" + articleIdList +
+                ", userId=" + userId +
+                '}';
+    }
 }

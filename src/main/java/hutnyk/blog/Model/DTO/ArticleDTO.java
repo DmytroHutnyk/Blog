@@ -39,4 +39,13 @@ public class ArticleDTO {
     public void setBlogId(Long blog) {
         this.blog = blog;
     }
+
+    @Override
+    public String toString() {
+        return "ArticleDTO{" +
+                "title='" + title + '\'' +
+                ", userId=" + userId +
+                ", blog=" + blog +
+                '}';
+    }
 }

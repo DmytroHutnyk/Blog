@@ -30,4 +30,12 @@ public class RoleDTO {
     public void setUserIdList(List<Long> userIdList) {
         this.userIdList = userIdList;
     }
+
+    @Override
+    public String toString() {
+        return "RoleDTO{" +
+                "name='" + name + '\'' +
+                ", userIdList=" + userIdList +
+                '}';
+    }
 }
