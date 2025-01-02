@@ -42,4 +42,10 @@ public class UserService {
         }
         repository.deleteById(id);
     }
+
+    public UserDTO findUserByEmail(String email) {
+        User user = repository.findByEmail(email)
+                .orElseThrow(() -> new EntityNotFoundException("User not found with email: " + email));
+        return mapper.userToDTO(user);
+    }
 }

@@ -46,4 +46,10 @@ public class BlogService {
         }
         repository.deleteById(id);
     }
+
+    public BlogDTO findBlogByName(String name) {
+        Blog blog = repository.findByName(name)
+                .orElseThrow(() -> new EntityNotFoundException("Blog not found with name: " + name));
+        return mapper.blogToDTO(blog);
+    }
 }

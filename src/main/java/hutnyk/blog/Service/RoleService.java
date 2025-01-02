@@ -44,4 +44,10 @@ public class RoleService {
         }
         repository.deleteById(id);
     }
+
+    public RoleDTO findRoleByName(String name) {
+        Role role = repository.findByName(name)
+                .orElseThrow(() -> new EntityNotFoundException("Role not found with name: " + name));
+        return mapper.roleToDTO(role);
+    }
 }
