@@ -12,11 +12,11 @@ public class User {
     private Long id;
     private String email;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Article> articleList;
 
-    @OneToOne
-    @JoinColumn(name = "blog_id", unique = true)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "blog_id" ,unique = true)
     private Blog blog;
 
     @ManyToMany

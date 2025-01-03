@@ -12,10 +12,10 @@ public class Blog {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "blog")
+    @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL)
     private List<Article> articleList;
 
-    @OneToOne(mappedBy = "blog")
+    @OneToOne(mappedBy = "blog", cascade = CascadeType.ALL)
     private User user;
 
     public Blog() {
