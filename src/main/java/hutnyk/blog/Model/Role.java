@@ -11,7 +11,7 @@ public class Role {
     private Long id;
     private String name;
 
-    @ManyToMany(mappedBy = "roleList")
+    @ManyToMany(mappedBy = "roleList", cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     private List<User> userList;
 
     public Role() {

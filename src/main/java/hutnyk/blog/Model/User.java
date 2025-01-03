@@ -19,7 +19,7 @@ public class User {
     @JoinColumn(name = "blog_id" ,unique = true)
     private Blog blog;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinTable(
             name = "user_role",
             joinColumns = @JoinColumn(name = "user_id"),
