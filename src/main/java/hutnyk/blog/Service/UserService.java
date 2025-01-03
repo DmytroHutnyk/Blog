@@ -6,6 +6,8 @@ import hutnyk.blog.Model.User;
 import hutnyk.blog.Repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 @Service
@@ -18,6 +20,7 @@ public class UserService {
         this.repository = repository;
     }
 
+    @Transactional
     public List<UserDTO> getAllUsers() {
         return repository.findAll().stream()
                 .map(mapper::userToDTO)
