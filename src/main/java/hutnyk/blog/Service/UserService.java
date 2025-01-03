@@ -33,6 +33,7 @@ public class UserService {
         return mapper.userToDTO(savedUser);
     }
 
+    @Transactional
     public UserDTO findUserById(Long id) {
         User user = repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + id));
@@ -46,6 +47,7 @@ public class UserService {
         repository.deleteById(id);
     }
 
+    @Transactional
     public UserDTO findUserByEmail(String email) {
         User user = repository.findByEmail(email)
                 .orElseThrow(() -> new EntityNotFoundException("User not found with email: " + email));
